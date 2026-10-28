@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Portal | S. Fernandez Web Design & Development</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='25' fill='%230B132B'/><path d='M30 35 C30 25, 45 25, 50 35 C55 45, 30 50, 30 65 C30 75, 45 75, 55 68' stroke='%23F97316' stroke-width='9' fill='none' stroke-linecap='round'/><path d='M60 30 L80 30 M60 48 L75 48 M60 30 L60 70' stroke='%233B82F6' stroke-width='9' stroke-linecap='round'/></svg>">
+
+  <!-- Tailwind CSS Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#0B132B',
+              slate: '#1C2541',
+              royal: '#2563EB',
+              orange: '#F97316',
+              dark: '#070B19',
+              cardDark: '#0D142A'
+            }
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            heading: ['Outfit', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="bg-[#070B19] text-slate-100 min-h-screen">
+
+  <!-- ========================================================================
+       PASSCODE LOGIN MODAL (PASSWORD PROTECTED)
+       ======================================================================== -->
+  <div id="admin-login-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-xl flex items-center justify-center p-4">
+    <div class="glass-panel rounded-3xl border border-white/10 p-8 max-w-md w-full bg-[#0D142A] text-center shadow-2xl">
+      <div class="w-14 h-14 rounded-2xl bg-orange-500/10 text-orange-400 flex items-center justify-center mx-auto mb-5 border border-orange-500/20">
+        <i data-lucide="lock" class="w-7 h-7"></i>
+      </div>
+      <h2 class="font-heading font-black text-2xl text-white">S. Fernandez Admin</h2>
+      <p class="text-xs text-slate-400 mt-1 mb-6">Enter your security passcode to access project inquiries & bookings.</p>
+
+      <form id="admin-login-form" class="space-y-4">
+        <div>
+          <input type="password" id="admin-passcode-input" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white text-center font-mono tracking-widest text-lg focus:outline-none focus:border-orange-500" placeholder="••••••••••••" autofocus>
+          <span class="text-[11px] text-slate-500 block mt-2">Default passcode: <code class="text-orange-400 font-mono">sfernandez2025</code></span>
+        </div>
+
+        <p id="admin-login-error" class="hidden text-xs text-red-400 font-semibold">
+          Incorrect passcode. Please try again.
+        </p>
+
+        <button type="submit" class="w-full py-3.5 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-bold text-sm transition-all shadow-lg shadow-orange-500/25">
+          Access Admin Dashboard →
+        </button>
+      </form>
+
+      <div class="mt-6 pt-4 border-t border-white/10">
+        <a href="index.html" class="text-xs text-slate-400 hover:text-white flex items-center justify-center gap-1">
+          ← Return to Public Website
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       ADMIN DASHBOARD CONTENT (VISIBLE AFTER AUTHENTICATION)
+       ======================================================================== -->
+  <div id="admin-dashboard" class="hidden min-h-screen flex flex-col">
+    
+    <!-- Top Admin Header -->
+    <header class="glass-nav border-b border-white/10 sticky top-0 z-30">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 py-4 flex items-center justify-between">
+        
+        <div class="flex items-center gap-3">
+          <a href="index.html" class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-600 to-orange-500 p-0.5">
+              <div class="w-full h-full bg-[#070B19] rounded-[10px] flex items-center justify-center font-heading font-black text-sm text-white">
+                SF
+              </div>
+            </div>
+            <span class="font-heading font-extrabold text-lg text-white">S. Fernandez</span>
+          </a>
+          <span class="px-2.5 py-0.5 rounded-md bg-orange-500/10 text-orange-400 text-xs font-mono font-bold border border-orange-500/20">
+            ADMIN PORTAL
+          </span>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <button type="button" id="admin-refresh-btn" class="p-2 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 text-slate-300 text-xs font-semibold flex items-center gap-1.5" title="Refresh Bookings">
+            <i data-lucide="refresh-cw" class="w-4 h-4"></i>
+            <span class="hidden sm:inline">Refresh</span>
+          </button>
+
+          <a href="index.html" target="_blank" class="p-2 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 text-slate-300 text-xs font-semibold flex items-center gap-1.5" title="View Live Website">
+            <i data-lucide="external-link" class="w-4 h-4"></i>
+            <span class="hidden sm:inline">View Live Site</span>
+          </a>
+
+          <button type="button" id="admin-logout-btn" class="p-2 rounded-xl border border-red-500/20 bg-red-500/10 hover:bg-red-500/20 text-red-400 text-xs font-semibold flex items-center gap-1.5" title="Log Out">
+            <i data-lucide="log-out" class="w-4 h-4"></i>
+            <span class="hidden sm:inline">Log Out</span>
+          </button>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      
+      <!-- Top Overview Stat Cards -->
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
+        
+        <div class="glass-panel p-5 rounded-2xl border border-white/10">
+          <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Total Bookings</span>
+          <div id="metric-total-bookings" class="text-3xl font-heading font-black text-white mt-1">0</div>
+        </div>
+
+        <div class="glass-panel p-5 rounded-2xl border border-blue-500/30 bg-blue-500/5">
+          <span class="text-xs font-semibold uppercase tracking-wider text-blue-400">New Inquiries</span>
+          <div id="metric-new-inquiries" class="text-3xl font-heading font-black text-blue-400 mt-1">0</div>
+        </div>
+
+        <div class="glass-panel p-5 rounded-2xl border border-orange-500/30 bg-orange-500/5">
+          <span class="text-xs font-semibold uppercase tracking-wider text-orange-400">In Progress</span>
+          <div id="metric-in-progress" class="text-3xl font-heading font-black text-orange-400 mt-1">0</div>
+        </div>
+
+        <div class="glass-panel p-5 rounded-2xl border border-emerald-500/30 bg-emerald-500/5">
+          <span class="text-xs font-semibold uppercase tracking-wider text-emerald-400">Completed</span>
+          <div id="metric-completed" class="text-3xl font-heading font-black text-emerald-400 mt-1">0</div>
+        </div>
+
+        <div class="glass-panel p-5 rounded-2xl border border-purple-500/30 bg-purple-500/5 col-span-2 md:col-span-1">
+          <span class="text-xs font-semibold uppercase tracking-wider text-purple-300">Pipeline Value</span>
+          <div id="metric-pipeline-value" class="text-2xl font-heading font-black text-purple-400 mt-1">$0</div>
+        </div>
+
+      </div>
+
+      <!-- Action Toolbar (Filters, Search, Export, Manual Block) -->
+      <div class="glass-panel rounded-2xl border border-white/10 p-4 mb-6 flex flex-col md:flex-row items-center justify-between gap-4">
+        
+        <!-- Search bar -->
+        <div class="relative w-full md:w-80">
+          <i data-lucide="search" class="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400"></i>
+          <input type="text" id="admin-search-input" class="w-full pl-10 pr-4 py-2 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-400 text-xs focus:outline-none focus:border-orange-500" placeholder="Search by name, email, brand, ID...">
+        </div>
+
+        <!-- Filter pills -->
+        <div class="flex items-center gap-1.5 flex-wrap overflow-x-auto w-full md:w-auto">
+          <button type="button" data-status="all" class="admin-filter-pill px-3 py-1.5 rounded-lg text-xs font-bold bg-orange-500 text-white transition-all">
+            All
+          </button>
+          <button type="button" data-status="new" class="admin-filter-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white transition-all">
+            New
+          </button>
+          <button type="button" data-status="contacted" class="admin-filter-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white transition-all">
+            Contacted
+          </button>
+          <button type="button" data-status="in-progress" class="admin-filter-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white transition-all">
+            In Progress
+          </button>
+          <button type="button" data-status="completed" class="admin-filter-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white transition-all">
+            Completed
+          </button>
+        </div>
+
+        <!-- Utility Action Buttons -->
+        <div class="flex items-center gap-2 w-full md:w-auto justify-end">
+          <button type="button" id="btn-open-block-slot" class="px-3 py-1.5 rounded-xl border border-purple-500/30 bg-purple-500/10 hover:bg-purple-500/20 text-purple-300 text-xs font-bold flex items-center gap-1">
+            <i data-lucide="calendar-off" class="w-3.5 h-3.5"></i> Block Slot
+          </button>
+          <button type="button" id="btn-export-csv" class="px-3 py-1.5 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 text-slate-300 text-xs font-bold flex items-center gap-1">
+            <i data-lucide="download" class="w-3.5 h-3.5"></i> Export CSV
+          </button>
+          <button type="button" id="btn-export-json" class="px-3 py-1.5 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 text-slate-300 text-xs font-bold flex items-center gap-1">
+            <i data-lucide="file-json" class="w-3.5 h-3.5"></i> Backup JSON
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Bookings Table Container -->
+      <div class="glass-panel rounded-3xl border border-white/10 overflow-hidden shadow-2xl">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="border-b border-white/10 bg-white/5 text-[11px] font-bold uppercase tracking-wider text-slate-400">
+                <th class="py-4 px-4">Ref ID</th>
+                <th class="py-4 px-4">Client Contact</th>
+                <th class="py-4 px-4">Project & Type</th>
+                <th class="py-4 px-4">Consultation Slot</th>
+                <th class="py-4 px-4">Status</th>
+                <th class="py-4 px-4">Est. Investment</th>
+                <th class="py-4 px-4 text-right">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="admin-bookings-tbody">
+              <!-- Rendered by js/admin.js -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Empty State -->
+        <div id="admin-empty-state" class="hidden py-16 text-center">
+          <i data-lucide="inbox" class="w-12 h-12 text-slate-600 mx-auto mb-3"></i>
+          <h4 class="font-bold text-white text-base">No bookings found</h4>
+          <p class="text-xs text-slate-400 mt-1">Try adjusting your search query or status filter.</p>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- ========================================================================
+       BOOKING DETAIL INSPECTION MODAL
+       ======================================================================== -->
+  <div id="booking-detail-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
+    <div class="glass-panel rounded-3xl border border-white/20 p-6 sm:p-8 max-w-3xl w-full max-h-[90vh] overflow-y-auto relative bg-[#0B132B]">
+      <button type="button" id="booking-detail-modal-close" class="absolute top-5 right-5 p-2 rounded-full bg-white/10 hover:bg-white/20 text-slate-300 hover:text-white" title="Close">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+      <div id="booking-detail-content">
+        <!-- Rendered by js/admin.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       BLOCK TIME SLOT MODAL
+       ======================================================================== -->
+  <div id="block-slot-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
+    <div class="glass-panel rounded-3xl border border-white/20 p-6 max-w-md w-full bg-[#0D142A] relative">
+      <button type="button" id="block-slot-modal-close" class="absolute top-4 right-4 p-2 rounded-full bg-white/10 text-slate-300" title="Close">
+        <i data-lucide="x" class="w-4 h-4"></i>
+      </button>
+
+      <h3 class="font-heading font-black text-xl text-white mb-2">Block Consultation Slot</h3>
+      <p class="text-xs text-slate-400 mb-6">Manually mark a date and time slot as unavailable on the public booking calendar.</p>
+
+      <form id="block-slot-form" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1">Select Date</label>
+          <input type="date" id="block-slot-date" required class="w-full px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-orange-500">
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1">Select Time Slot</label>
+          <select id="block-slot-time" required class="w-full px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-orange-500">
+            <option value="09:30" class="bg-slate-900">09:30 AM CET</option>
+            <option value="11:00" class="bg-slate-900">11:00 AM CET</option>
+            <option value="14:00" class="bg-slate-900">02:00 PM CET</option>
+            <option value="15:30" class="bg-slate-900">03:30 PM CET</option>
+            <option value="17:00" class="bg-slate-900">05:00 PM CET</option>
+            <option value="18:30" class="bg-slate-900">06:30 PM CET</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1">Reason (Internal)</label>
+          <input type="text" id="block-slot-reason" class="w-full px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-orange-500" placeholder="e.g. Existing Client Call, Personal Leave">
+        </div>
+
+        <button type="submit" class="w-full py-3 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-bold text-sm transition-all shadow-lg">
+          Confirm & Block Time Slot
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification Host -->
+  <div id="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/storage.js"></script>
+  <script src="js/admin.js"></script>
+  <script>
+    if (window.lucide) {
+      window.lucide.createIcons();
+    }
+  </script>
+</body>
+</html>

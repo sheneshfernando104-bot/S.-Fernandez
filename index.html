@@ -1,0 +1,1782 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>S. Fernandez | Web Design & Development | Websites Built Exactly How You Imagine</title>
+  
+  <!-- SEO & Open Graph Meta Tags -->
+  <meta name="description" content="Custom, modern, responsive websites built exactly the way you imagine them. Starting from $5 to $70. Interactive 9-step website builder, live price estimator, and instant consultation booking.">
+  <meta name="author" content="S. Fernandez">
+  <meta name="keywords" content="web design, web development, website builder, custom websites, responsive design, e-commerce, portfolio, landing page, Italy, freelance developer">
+  
+  <meta property="og:title" content="S. Fernandez | Modern Web Design & Development">
+  <meta property="og:description" content="Websites built exactly the way you imagine them. Starting from $5 (max $70). Fast, modern, responsive websites with live consultation booking.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon (Sleek Modern SVG) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='25' fill='%230B132B'/><path d='M30 35 C30 25, 45 25, 50 35 C55 45, 30 50, 30 65 C30 75, 45 75, 55 68' stroke='%23F97316' stroke-width='9' fill='none' stroke-linecap='round'/><path d='M60 30 L80 30 M60 48 L75 48 M60 30 L60 70' stroke='%233B82F6' stroke-width='9' stroke-linecap='round'/></svg>">
+
+  <!-- Tailwind CSS Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#0B132B',
+              slate: '#1C2541',
+              royal: '#2563EB',
+              orange: '#F97316',
+              'orange-hover': '#EA580C',
+              dark: '#070B19',
+              cardDark: '#0D142A'
+            }
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            heading: ['Outfit', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+            serif: ['Playfair Display', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons & Canvas Confetti -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="bg-[#070B19] text-slate-100 selection:bg-orange-500 selection:text-white transition-colors duration-300">
+
+  <!-- ========================================================================
+       TOP NOTIFICATION BAR (LIVE STATUS)
+       ======================================================================== -->
+  <div class="bg-gradient-to-r from-blue-900 via-indigo-950 to-orange-950/80 border-b border-white/10 text-xs py-2 px-4">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="pulsing-dot"></span>
+        <span class="font-medium text-slate-200">
+          <strong class="text-white">Live Availability:</strong> Accepting 2 new client projects for this month • Fast 48h kick-off
+        </span>
+      </div>
+      <div class="hidden sm:flex items-center gap-4 text-slate-300">
+        <a href="tel:+393510823322" class="hover:text-orange-400 transition-colors flex items-center gap-1">
+          <i data-lucide="phone" class="w-3.5 h-3.5"></i> +39 351 082 3322
+        </a>
+        <span>•</span>
+        <a href="mailto:seneshf60@gmail.com" class="hover:text-orange-400 transition-colors flex items-center gap-1">
+          <i data-lucide="mail" class="w-3.5 h-3.5"></i> seneshf60@gmail.com
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       STICKY HEADER / NAVIGATION
+       ======================================================================== -->
+  <header class="sticky top-0 z-50 glass-nav transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-blue-600 via-indigo-600 to-orange-500 p-0.5 shadow-lg shadow-orange-500/20 group-hover:shadow-orange-500/40 transition-all duration-300">
+          <div class="w-full h-full bg-[#070B19] rounded-[14px] flex items-center justify-center font-heading font-black text-xl text-white">
+            <span class="text-orange-500">S</span><span class="text-blue-400">F</span>
+          </div>
+        </div>
+        <div>
+          <span class="font-heading font-extrabold text-xl tracking-tight text-white group-hover:text-orange-400 transition-colors">
+            S. Fernandez
+          </span>
+          <span class="block text-[11px] font-medium text-slate-400 -mt-1 tracking-wider uppercase">
+            Web Design & Dev
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-300">
+        <a href="#services" class="hover:text-orange-400 transition-colors">Services</a>
+        <a href="#portfolio" class="hover:text-orange-400 transition-colors">Portfolio</a>
+        <a href="#how-it-works" class="hover:text-orange-400 transition-colors">How It Works</a>
+        <a href="#pricing" class="hover:text-orange-400 transition-colors">Pricing</a>
+        <a href="#testimonials" class="hover:text-orange-400 transition-colors">Reviews</a>
+        <a href="#faq" class="hover:text-orange-400 transition-colors">FAQ</a>
+      </nav>
+
+      <!-- Right CTAs & Theme Toggle -->
+      <div class="flex items-center gap-3">
+        <!-- Light/Dark Mode Toggle Button -->
+        <button type="button" class="theme-toggle-btn p-2.5 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white transition-all" title="Toggle Theme" aria-label="Toggle Light/Dark Theme">
+          <i data-lucide="sun" class="theme-icon-dark w-4 h-4 text-orange-400 hidden"></i>
+          <i data-lucide="moon" class="theme-icon-light w-4 h-4 text-blue-400"></i>
+        </button>
+
+        <!-- Admin Shortcut -->
+        <a href="admin.html" class="hidden lg:flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold text-slate-400 hover:text-slate-200 border border-white/5 hover:border-white/10 transition-colors" title="Admin Portal">
+          <i data-lucide="lock" class="w-3.5 h-3.5"></i> Admin
+        </a>
+
+        <!-- Main CTA (Scrolls to Builder) -->
+        <a href="#website-builder" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-bold text-sm shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transform hover:-translate-y-0.5 transition-all">
+          <span>Start Your Website</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+
+        <!-- Mobile Menu Hamburger Button -->
+        <button type="button" id="mobile-menu-toggle" class="md:hidden p-2.5 rounded-xl border border-white/10 bg-white/5 text-slate-200" aria-label="Open Mobile Menu">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Navigation -->
+  <div id="mobile-menu-drawer" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-xl hidden">
+    <div class="flex flex-col h-full max-w-sm w-full bg-[#070B19] border-r border-white/10 p-6">
+      <div class="flex items-center justify-between pb-6 border-b border-white/10">
+        <span class="font-heading font-black text-xl text-white">S. Fernandez</span>
+        <button type="button" id="mobile-menu-close" class="p-2 rounded-lg text-slate-400 hover:text-white">
+          <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+      </div>
+      <div class="flex flex-col gap-5 py-8 text-lg font-semibold text-slate-200">
+        <a href="#services" class="mobile-nav-link hover:text-orange-400">Services</a>
+        <a href="#portfolio" class="mobile-nav-link hover:text-orange-400">Portfolio & Work</a>
+        <a href="#how-it-works" class="mobile-nav-link hover:text-orange-400">How It Works</a>
+        <a href="#pricing" class="mobile-nav-link hover:text-orange-400">Pricing Packages</a>
+        <a href="#testimonials" class="mobile-nav-link hover:text-orange-400">Client Reviews</a>
+        <a href="#faq" class="mobile-nav-link hover:text-orange-400">FAQ</a>
+        <a href="admin.html" class="mobile-nav-link text-sm text-slate-400 flex items-center gap-2 pt-4 border-t border-white/10">
+          <i data-lucide="lock" class="w-4 h-4"></i> Admin Portal
+        </a>
+      </div>
+      <div class="mt-auto pt-6 border-t border-white/10">
+        <a href="#website-builder" class="mobile-nav-link w-full py-3 px-4 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-bold text-center block shadow-lg">
+          Start Your Website Now →
+        </a>
+        <div class="mt-4 text-xs text-center text-slate-400">
+          WhatsApp: <a href="https://wa.me/393510823322" class="text-orange-400 font-bold">+39 351 082 3322</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- ========================================================================
+         HERO SECTION (WITH AMBIENT LIVE VIDEO BACKGROUND)
+         ======================================================================== -->
+    <section class="relative min-h-[92vh] flex items-center justify-center overflow-hidden pt-12 pb-24 px-4 sm:px-6 lg:px-8">
+      
+      <!-- Video Background Container -->
+      <div class="hero-video-wrapper">
+        <!-- Live Technology Motion Ambient Video -->
+        <video id="hero-background-video" autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1920&q=80" class="hero-video">
+          <!-- Web-optimized smooth ambient motion loop -->
+          <source src="https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-screens-with-graphs-and-data-31913-large.mp4" type="video/mp4">
+          <source src="https://assets.mixkit.co/videos/preview/mixkit-circuit-board-with-glowing-lines-41223-large.mp4" type="video/mp4">
+        </video>
+        <!-- Overlay Gradients & Ambient Glow Orbs -->
+        <div class="hero-overlay"></div>
+        <div class="ambient-orb w-[500px] h-[500px] bg-blue-600/25 top-1/4 -left-40"></div>
+        <div class="ambient-orb w-[450px] h-[450px] bg-orange-500/20 bottom-10 -right-20" style="animation-delay: -5s;"></div>
+      </div>
+
+      <!-- Video Control Floating Pill (Bottom Left of Hero) -->
+      <div class="absolute bottom-6 left-6 z-20 hidden md:flex items-center gap-2 p-1.5 rounded-full bg-slate-900/70 backdrop-blur-md border border-white/10 text-xs text-slate-300">
+        <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 text-[11px] font-bold flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> Live Canvas
+        </span>
+        <button type="button" id="video-toggle-play" class="p-1.5 hover:text-white transition-colors" title="Play / Pause Background Motion">
+          <i data-lucide="play" id="video-icon-play" class="w-3.5 h-3.5 hidden"></i>
+          <i data-lucide="pause" id="video-icon-pause" class="w-3.5 h-3.5"></i>
+        </button>
+        <button type="button" id="video-toggle-sound" class="p-1.5 hover:text-white transition-colors" title="Toggle Sound">
+          <i data-lucide="volume-x" id="video-icon-mute" class="w-3.5 h-3.5"></i>
+          <i data-lucide="volume-2" id="video-icon-unmute" class="w-3.5 h-3.5 hidden text-orange-400"></i>
+        </button>
+      </div>
+
+      <!-- Hero Main Content -->
+      <div class="relative z-10 max-w-5xl mx-auto text-center">
+        
+        <!-- Trust / Availability Pill -->
+        <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-slate-900/80 backdrop-blur-md border border-orange-500/30 text-xs sm:text-sm font-semibold text-slate-200 mb-8 shadow-xl shadow-orange-500/10">
+          <span class="w-2 h-2 rounded-full bg-orange-400 animate-pulse"></span>
+          <span>Bespoke Web Design & Development</span>
+          <span class="text-orange-400">•</span>
+          <span class="text-orange-400 font-bold">Starting from just $5 (Max $70)</span>
+        </div>
+
+        <!-- Strong Headline -->
+        <h1 class="font-heading font-black text-4xl sm:text-6xl lg:text-7xl tracking-tight text-white leading-[1.08] max-w-4xl mx-auto">
+          Websites built <span class="text-gradient-orange">exactly</span> the way you <span class="text-gradient-blue">imagine them.</span>
+        </h1>
+
+        <!-- Short Subheadline -->
+        <p class="mt-6 text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto font-normal leading-relaxed">
+          High-performance, beautifully designed, and conversion-ready websites tailored specifically for your brand. Guided step-by-step from idea to launch.
+        </p>
+
+        <!-- CTAs -->
+        <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="#website-builder" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-orange-500 via-orange-600 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-extrabold text-base shadow-2xl shadow-orange-500/30 hover:shadow-orange-500/50 transform hover:-translate-y-1 transition-all flex items-center justify-center gap-3">
+            <i data-lucide="wand-2" class="w-5 h-5"></i>
+            <span>Start Your Website (Interactive Builder)</span>
+          </a>
+
+          <a href="#portfolio" class="w-full sm:w-auto px-7 py-4 rounded-2xl bg-white/5 hover:bg-white/10 backdrop-blur-md border border-white/10 text-white font-bold text-base hover:border-white/25 transition-all flex items-center justify-center gap-2">
+            <span>Explore Recent Work</span>
+            <i data-lucide="arrow-down" class="w-4 h-4 text-orange-400"></i>
+          </a>
+        </div>
+
+        <!-- Metric Cards Grid -->
+        <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto text-left">
+          <div class="p-4 rounded-2xl glass-panel border border-white/5">
+            <span class="block font-heading font-extrabold text-2xl sm:text-3xl text-white">45+</span>
+            <span class="text-xs text-slate-400 font-medium">Websites Launched</span>
+          </div>
+          <div class="p-4 rounded-2xl glass-panel border border-white/5">
+            <span class="block font-heading font-extrabold text-2xl sm:text-3xl text-orange-400">99.4%</span>
+            <span class="text-xs text-slate-400 font-medium">5-Star Satisfaction</span>
+          </div>
+          <div class="p-4 rounded-2xl glass-panel border border-white/5">
+            <span class="block font-heading font-extrabold text-2xl sm:text-3xl text-emerald-400">100/100</span>
+            <span class="text-xs text-slate-400 font-medium">Google Speed Score</span>
+          </div>
+          <div class="p-4 rounded-2xl glass-panel border border-white/5">
+            <span class="block font-heading font-extrabold text-2xl sm:text-3xl text-blue-400">7 Days</span>
+            <span class="text-xs text-slate-400 font-medium">Average Delivery</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SERVICES SECTION (8 DETAILED CARDS)
+         ======================================================================== -->
+    <section id="services" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-bold uppercase tracking-widest text-orange-400 bg-orange-500/10 px-3 py-1 rounded-full border border-orange-500/20">
+          Tailored Digital Services
+        </span>
+        <h2 class="font-heading font-black text-3xl sm:text-5xl text-white mt-4">
+          Everything You Need For A Standout Web Presence
+        </h2>
+        <p class="text-slate-400 text-base sm:text-lg mt-4">
+          Whether you need a high-impact landing page or a full e-commerce store with automated payments, each website is custom-coded for speed and conversions.
+        </p>
+      </div>
+
+      <!-- 8 Service Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- 1. Business Website -->
+        <div class="glass-panel rounded-3xl p-6 border border-white/10 card-hover-lift flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-blue-500/10 text-blue-400 flex items-center justify-center mb-5">
+              <i data-lucide="briefcase" class="w-6 h-6"></i>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="font-heading font-bold text-xl text-white">Business Website</h3>
+              <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-blue-500/20 text-blue-300">from $20</span>
+            </div>
+            <p class="text-sm text-slate-400 mt-2">
+              Clean corporate presence presenting your services, team, client reviews, and direct lead generation forms.
+            </p>
+            <ul class="mt-4 space-y-2 text-xs text-slate-300">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Up to 6 Custom Pages</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Contact Form & Maps Integration</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Mobile Responsive & Fast</li>
+            </ul>
+          </div>
+          <button type="button" onclick="window.configureWebsiteType('Business Website')" class="mt-6 w-full py-2.5 px-4 rounded-xl bg-white/5 hover:bg-orange-500 hover:text-white text-xs font-bold text-slate-200 transition-all text-center">
+            Configure This Type →
+          </button>
+        </div>
+
+        <!-- 2. Portfolio Website -->
+        <div class="glass-panel rounded-3xl p-6 border border-white/10 card-hover-lift flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-5">
+              <i data-lucide="camera" class="w-6 h-6"></i>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="font-heading font-bold text-xl text-white">Portfolio</h3>
+              <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-purple-500/20 text-purple-300">from $10</span>
+            </div>
+            <p class="text-sm text-slate-400 mt-2">
+              Stunning visual showcase for creators, architects, photographers, models, and freelance specialists.
+            </p>
+            <ul class="mt-4 space-y-2 text-xs text-slate-300">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Filterable Project Galleries</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> High-res Image Lightbox</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Resume / CV & Inquiry Form</li>
+            </ul>
+          </div>
+          <button type="button" onclick="window.configureWebsiteType('Portfolio Website')" class="mt-6 w-full py-2.5 px-4 rounded-xl bg-white/5 hover:bg-orange-500 hover:text-white text-xs font-bold text-slate-200 transition-all text-center">
+            Configure This Type →
+          </button>
+        </div>
+
+        <!-- 3. E-commerce Store -->
+        <div class="glass-panel rounded-3xl p-6 border border-orange-500/30 bg-orange-500/5 card-hover-lift flex flex-col justify-between relative">
+          <div class="absolute -top-3 right-6 px-2.5 py-0.5 rounded-full bg-orange-500 text-white text-[10px] font-black uppercase tracking-wider">
+            Popular
+          </div>
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-orange-500/10 text-orange-400 flex items-center justify-center mb-5">
+              <i data-lucide="shopping-bag" class="w-6 h-6"></i>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="font-heading font-bold text-xl text-white">E-commerce Store</h3>
+              <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-orange-500/20 text-orange-300">from $40</span>
+            </div>
+            <p class="text-sm text-slate-400 mt-2">
+              Complete online shopping system with product catalog, cart, automated checkout, Stripe, and Apple Pay.
+            </p>
+            <ul class="mt-4 space-y-2 text-xs text-slate-300">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Stripe & PayPal Integration</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Order Confirmation Emails</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Product Variations & Inventory</li>
+            </ul>
+          </div>
+          <button type="button" onclick="window.configureWebsiteType('E-commerce Store')" class="mt-6 w-full py-2.5 px-4 rounded-xl bg-orange-500 text-white hover:bg-orange-600 text-xs font-bold transition-all text-center shadow-lg shadow-orange-500/20">
+            Configure This Type →
+          </button>
+        </div>
+
+        <!-- 4. Landing Page -->
+        <div class="glass-panel rounded-3xl p-6 border border-white/10 card-hover-lift flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-5">
+              <i data-lucide="zap" class="w-6 h-6"></i>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="font-heading font-bold text-xl text-white">Landing Page</h3>
+              <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300">from $5</span>
+            </div>
+            <p class="text-sm text-slate-400 mt-2">
+              High-converting single-page experience designed for product launches, paid ad campaigns, or event promos.
+            </p>
+            <ul class="mt-4 space-y-2 text-xs text-slate-300">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Fast 48h Turnaround</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Compelling CTA Funnel</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Conversion Tracking Ready</li>
+            </ul>
+          </div>
+          <button type="button" onclick="window.configureWebsiteType('Landing Page')" class="mt-6 w-full py-2.5 px-4 rounded-xl bg-white/5 hover:bg-orange-500 hover:text-white text-xs font-bold text-slate-200 transition-all text-center">
+            Configure This Type →
+          </button>
+        </div>
+
+        <!-- 5. Blog / Publication -->
+        <div class="glass-panel rounded-3xl p-6 border border-white/10 card-hover-lift flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-400 flex items-center justify-center mb-5">
+              <i data-lucide="book-open" class="w-6 h-6"></i>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="font-heading font-bold text-xl text-white">Blog / Publication</h3>
+              <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-amber-500/20 text-amber-300">from $15</span>
+            </div>
+            <p class="text-sm text-slate-400 mt-2">
+              SEO-driven editorial platform with categories, tag filters, author bios, and newsletter signup hooks.
+            </p>
+            <ul class="mt-4 space-y-2 text-xs text-slate-300">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Easy CMS for Article Publishing</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Social Sharing Integration</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Google SEO Optimization</li>
+            </ul>
+          </div>
+          <button type="button" onclick="window.configureWebsiteType('Blog / Publication')" class="mt-6 w-full py-2.5 px-4 rounded-xl bg-white/5 hover:bg-orange-500 hover:text-white text-xs font-bold text-slate-200 transition-all text-center">
+            Configure This Type →
+          </button>
+        </div>
+
+        <!-- 6. Booking & Appointment Website -->
+        <div class="glass-panel rounded-3xl p-6 border border-white/10 card-hover-lift flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center mb-5">
+              <i data-lucide="calendar" class="w-6 h-6"></i>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="font-heading font-bold text-xl text-white">Booking Website</h3>
+              <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-cyan-500/20 text-cyan-300">from $30</span>
+            </div>
+            <p class="text-sm text-slate-400 mt-2">
+              Automated scheduling platform for consultants, doctors, salons, fitness trainers, and therapists.
+            </p>
+            <ul class="mt-4 space-y-2 text-xs text-slate-300">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Live Calendar & Time Slots</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Google Calendar 2-Way Sync</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Deposit / Payment Pre-collection</li>
+            </ul>
+          </div>
+          <button type="button" onclick="window.configureWebsiteType('Booking Website')" class="mt-6 w-full py-2.5 px-4 rounded-xl bg-white/5 hover:bg-orange-500 hover:text-white text-xs font-bold text-slate-200 transition-all text-center">
+            Configure This Type →
+          </button>
+        </div>
+
+        <!-- 7. Restaurant / Cafe Website -->
+        <div class="glass-panel rounded-3xl p-6 border border-white/10 card-hover-lift flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-rose-500/10 text-rose-400 flex items-center justify-center mb-5">
+              <i data-lucide="utensils" class="w-6 h-6"></i>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="font-heading font-bold text-xl text-white">Restaurant / Cafe</h3>
+              <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-rose-500/20 text-rose-300">from $25</span>
+            </div>
+            <p class="text-sm text-slate-400 mt-2">
+              Mobile-first restaurant website with interactive QR digital menu, table reservation widget, and Instagram sync.
+            </p>
+            <ul class="mt-4 space-y-2 text-xs text-slate-300">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Beautiful Digital Food Menu</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Table Reservations System</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Google Maps & Directions</li>
+            </ul>
+          </div>
+          <button type="button" onclick="window.configureWebsiteType('Restaurant / Cafe')" class="mt-6 w-full py-2.5 px-4 rounded-xl bg-white/5 hover:bg-orange-500 hover:text-white text-xs font-bold text-slate-200 transition-all text-center">
+            Configure This Type →
+          </button>
+        </div>
+
+        <!-- 8. Custom Web App -->
+        <div class="glass-panel rounded-3xl p-6 border border-white/10 card-hover-lift flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center mb-5">
+              <i data-lucide="cpu" class="w-6 h-6"></i>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="font-heading font-bold text-xl text-white">Custom Web App</h3>
+              <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-indigo-500/20 text-indigo-300">from $55</span>
+            </div>
+            <p class="text-sm text-slate-400 mt-2">
+              Bespoke web applications with member authentication, dynamic databases, third-party APIs, and client dashboards.
+            </p>
+            <ul class="mt-4 space-y-2 text-xs text-slate-300">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Full-Stack Architecture</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> User Authentication & Roles</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Realtime Database & Storage</li>
+            </ul>
+          </div>
+          <button type="button" onclick="window.configureWebsiteType('Custom Web App')" class="mt-6 w-full py-2.5 px-4 rounded-xl bg-white/5 hover:bg-orange-500 hover:text-white text-xs font-bold text-slate-200 transition-all text-center">
+            Configure This Type →
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         PORTFOLIO / SHOWCASE SECTION
+         ======================================================================== -->
+    <section id="portfolio" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-orange-400 bg-orange-500/10 px-3 py-1 rounded-full border border-orange-500/20">
+            Selected Work & Examples
+          </span>
+          <h2 class="font-heading font-black text-3xl sm:text-5xl text-white mt-4">
+            Recent Client Projects
+          </h2>
+          <p class="text-slate-400 text-sm sm:text-base mt-2 max-w-xl">
+            Click any project to inspect the architecture, metrics, and case study.
+          </p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap items-center gap-2">
+          <button type="button" data-filter="all" class="portfolio-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-orange-500 text-white shadow-md">
+            All Projects
+          </button>
+          <button type="button" data-filter="ecommerce" class="portfolio-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-white">
+            E-Commerce
+          </button>
+          <button type="button" data-filter="business" class="portfolio-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-white">
+            Business & Dining
+          </button>
+          <button type="button" data-filter="booking" class="portfolio-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-white">
+            Bookings
+          </button>
+          <button type="button" data-filter="saas" class="portfolio-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-white">
+            Web Apps
+          </button>
+        </div>
+      </div>
+
+      <!-- Portfolio Grid -->
+      <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Rendered dynamically by js/app.js -->
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         HOW IT WORKS (4 STEPS)
+         ======================================================================== -->
+    <section id="how-it-works" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-white/5">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-bold uppercase tracking-widest text-orange-400 bg-orange-500/10 px-3 py-1 rounded-full border border-orange-500/20">
+          Seamless Process
+        </span>
+        <h2 class="font-heading font-black text-3xl sm:text-5xl text-white mt-4">
+          From Concept To Launch In 4 Simple Steps
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-3">
+          No endless back-and-forth or technical jargon. You tell me what you want, and I bring it to life.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
+        
+        <!-- Step 1 -->
+        <div class="glass-panel rounded-3xl p-6 border border-white/10 relative">
+          <div class="w-12 h-12 rounded-2xl bg-orange-500/10 text-orange-400 font-heading font-black text-xl flex items-center justify-center mb-6 border border-orange-500/20">
+            01
+          </div>
+          <h3 class="font-heading font-bold text-xl text-white">Choose</h3>
+          <p class="text-sm text-slate-400 mt-2">
+            Select the website archetype (business, store, landing page, app) matching your exact business goals.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="glass-panel rounded-3xl p-6 border border-white/10 relative">
+          <div class="w-12 h-12 rounded-2xl bg-blue-500/10 text-blue-400 font-heading font-black text-xl flex items-center justify-center mb-6 border border-blue-500/20">
+            02
+          </div>
+          <h3 class="font-heading font-bold text-xl text-white">Customize</h3>
+          <p class="text-sm text-slate-400 mt-2">
+            Tailor your preferred color palette, typography style, essential features, and required pages in our interactive builder.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="glass-panel rounded-3xl p-6 border border-white/10 relative">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-400 font-heading font-black text-xl flex items-center justify-center mb-6 border border-emerald-500/20">
+            03
+          </div>
+          <h3 class="font-heading font-bold text-xl text-white">Book</h3>
+          <p class="text-sm text-slate-400 mt-2">
+            Pick a free 1-on-1 consultation slot on the live calendar to align on project scope, timeline, and deposit.
+          </p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="glass-panel rounded-3xl p-6 border border-white/10 relative">
+          <div class="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-400 font-heading font-black text-xl flex items-center justify-center mb-6 border border-amber-500/20">
+            04
+          </div>
+          <h3 class="font-heading font-bold text-white text-xl">Receive</h3>
+          <p class="text-sm text-slate-400 mt-2">
+            Sit back as I code, test, and deploy your pixel-perfect, lightning-fast website ready to win clients.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         PRICING PACKAGES (3 TIERS)
+         ======================================================================== -->
+    <section id="pricing" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-bold uppercase tracking-widest text-orange-400 bg-orange-500/10 px-3 py-1 rounded-full border border-orange-500/20">
+          Transparent Pricing
+        </span>
+        <h2 class="font-heading font-black text-3xl sm:text-5xl text-white mt-4">
+          Predictable Investments, Zero Hidden Fees
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-3">
+          Every package includes responsive mobile optimization, modern clean code, and post-launch peace of mind.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+        
+        <!-- Tier 1: Basic / Launch -->
+        <div class="glass-panel rounded-3xl p-8 border border-white/10 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Starter Tier</span>
+              <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-800 text-slate-300">Fast 48h-72h</span>
+            </div>
+            <h3 class="font-heading font-black text-2xl text-white">Basic Launch</h3>
+            <p class="text-xs text-slate-400 mt-1">Ideal for one-pagers, personal portfolios & lead capture.</p>
+            
+            <div class="mt-6 flex items-baseline gap-2">
+              <span class="text-4xl font-heading font-black text-white">$5 – $18</span>
+              <span class="text-xs text-slate-400">one-time</span>
+            </div>
+
+            <ul class="mt-8 space-y-3.5 text-xs text-slate-300">
+              <li class="flex items-center gap-2.5"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i> Single Page or up to 3 Pages</li>
+              <li class="flex items-center gap-2.5"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i> Fully Mobile & Tablet Responsive</li>
+              <li class="flex items-center gap-2.5"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i> Working Contact Form & WhatsApp Button</li>
+              <li class="flex items-center gap-2.5"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i> Fast Loading Speed (< 1s)</li>
+              <li class="flex items-center gap-2.5"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i> 1 Round of Revisions</li>
+            </ul>
+          </div>
+
+          <button type="button" onclick="window.configureWebsiteType('Landing Page')" class="mt-8 w-full py-3.5 px-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-sm transition-all text-center">
+            Choose Basic Package →
+          </button>
+        </div>
+
+        <!-- Tier 2: Standard / Growth (POPULAR) -->
+        <div class="glass-panel rounded-3xl p-8 border-2 border-orange-500 bg-orange-500/5 flex flex-col justify-between relative shadow-2xl shadow-orange-500/10">
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-orange-500 text-white text-xs font-black uppercase tracking-wider shadow-lg">
+            Most Popular Choice
+          </div>
+
+          <div>
+            <div class="flex items-center justify-between mb-4 mt-2">
+              <span class="text-xs font-bold uppercase tracking-wider text-orange-400">Standard Tier</span>
+              <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-orange-500/20 text-orange-300">1 – 2 Weeks</span>
+            </div>
+            <h3 class="font-heading font-black text-2xl text-white">Growth Business</h3>
+            <p class="text-xs text-slate-400 mt-1">Perfect for established businesses, doctors, salons, & cafes.</p>
+            
+            <div class="mt-6 flex items-baseline gap-2">
+              <span class="text-4xl font-heading font-black text-white">$20 – $42</span>
+              <span class="text-xs text-slate-400">one-time</span>
+            </div>
+
+            <ul class="mt-8 space-y-3.5 text-xs text-slate-300">
+              <li class="flex items-center gap-2.5"><i data-lucide="check-circle" class="w-4 h-4 text-orange-400"></i> Up to 7 Custom Designed Pages</li>
+              <li class="flex items-center gap-2.5"><i data-lucide="check-circle" class="w-4 h-4 text-orange-400"></i> Online Booking or Interactive Menus</li>
+              <li class="flex items-center gap-2.5"><i data-lucide="check-circle" class="w-4 h-4 text-orange-400"></i> Google SEO Optimization & Schema</li>
+              <li class="flex items-center gap-2.5"><i data-lucide="check-circle" class="w-4 h-4 text-orange-400"></i> Smooth Scroll & Micro-Animations</li>
+              <li class="flex items-center gap-2.5"><i data-lucide="check-circle" class="w-4 h-4 text-orange-400"></i> Domain & Hosting Setup Included</li>
+              <li class="flex items-center gap-2.5"><i data-lucide="check-circle" class="w-4 h-4 text-orange-400"></i> 30 Days Free Post-Launch Support</li>
+            </ul>
+          </div>
+
+          <button type="button" onclick="window.configureWebsiteType('Business Website')" class="mt-8 w-full py-3.5 px-4 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-bold text-sm transition-all text-center shadow-lg shadow-orange-500/30">
+            Choose Standard Package →
+          </button>
+        </div>
+
+        <!-- Tier 3: Premium / Enterprise -->
+        <div class="glass-panel rounded-3xl p-8 border border-white/10 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Custom Tier</span>
+              <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-800 text-slate-300">2 – 4 Weeks</span>
+            </div>
+            <h3 class="font-heading font-black text-2xl text-white">Premium & Store</h3>
+            <p class="text-xs text-slate-400 mt-1">Full e-commerce, custom web apps, and member platforms.</p>
+            
+            <div class="mt-6 flex items-baseline gap-2">
+              <span class="text-4xl font-heading font-black text-white">$45 – $70</span>
+              <span class="text-xs text-slate-400">max cap</span>
+            </div>
+
+            <ul class="mt-8 space-y-3.5 text-xs text-slate-300">
+              <li class="flex items-center gap-2.5"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i> Unlimited Custom Pages & Catalog</li>
+              <li class="flex items-center gap-2.5"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i> Stripe Checkout & Automated Payments</li>
+              <li class="flex items-center gap-2.5"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i> User Authentication & Member Portal</li>
+              <li class="flex items-center gap-2.5"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i> Multi-language Localization (i18n)</li>
+              <li class="flex items-center gap-2.5"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i> Dedicated Admin Management Dashboard</li>
+              <li class="flex items-center gap-2.5"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i> 60 Days VIP Priority Support</li>
+            </ul>
+          </div>
+
+          <button type="button" onclick="window.configureWebsiteType('E-commerce Store')" class="mt-8 w-full py-3.5 px-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-sm transition-all text-center">
+            Choose Premium Package →
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         TESTIMONIALS & REVIEWS SECTION
+         ======================================================================== -->
+    <section id="testimonials" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-white/5">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">
+          Client Feedback
+        </span>
+        <h2 class="font-heading font-black text-3xl sm:text-5xl text-white mt-4">
+          Trusted By Entrepreneurs & Creators
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-3">
+          Here is what clients say about working together with S. Fernandez.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Review 1 -->
+        <div class="glass-panel rounded-3xl p-6 border border-white/10 card-hover-lift">
+          <div class="flex items-center gap-1 text-amber-400 text-sm mb-4">
+            ★★★★★
+          </div>
+          <p class="text-sm text-slate-300 leading-relaxed italic">
+            "S. Fernandez delivered our restaurant website in just 5 days! The mobile digital menu and reservation flow works flawlessly. We saw an immediate 35% increase in online table reservations."
+          </p>
+          <div class="mt-6 pt-4 border-t border-white/10 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-orange-500 to-amber-500 text-white font-bold flex items-center justify-center text-sm">
+              MR
+            </div>
+            <div>
+              <h4 class="font-bold text-sm text-white">Marco Rossi</h4>
+              <span class="text-xs text-slate-400">Founder, Trattoria Milano</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="glass-panel rounded-3xl p-6 border border-white/10 card-hover-lift">
+          <div class="flex items-center gap-1 text-amber-400 text-sm mb-4">
+            ★★★★★
+          </div>
+          <p class="text-sm text-slate-300 leading-relaxed italic">
+            "The interactive website builder was super easy to use, and our 1-on-1 consultation was directly on point. Our fashion e-commerce store with Stripe is lightning-fast and looks ultra-premium."
+          </p>
+          <div class="mt-6 pt-4 border-t border-white/10 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-blue-500 to-indigo-500 text-white font-bold flex items-center justify-center text-sm">
+              CL
+            </div>
+            <div>
+              <h4 class="font-bold text-sm text-white">Chiara Lombardi</h4>
+              <span class="text-xs text-slate-400">Creative Director, L’Atelier</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="glass-panel rounded-3xl p-6 border border-white/10 card-hover-lift">
+          <div class="flex items-center gap-1 text-amber-400 text-sm mb-4">
+            ★★★★★
+          </div>
+          <p class="text-sm text-slate-300 leading-relaxed italic">
+            "Extremely professional communication over WhatsApp and Google Meet. Kept me updated throughout each phase. The speed score is 99 on Google PageSpeed. Highly recommended!"
+          </p>
+          <div class="mt-6 pt-4 border-t border-white/10 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-emerald-500 to-teal-500 text-white font-bold flex items-center justify-center text-sm">
+              AB
+            </div>
+            <div>
+              <h4 class="font-bold text-sm text-white">Alessandro Bellini</h4>
+              <span class="text-xs text-slate-400">Executive Coach, ZenPulse</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         FAQ SECTION
+         ======================================================================== -->
+    <section id="faq" class="py-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto border-t border-white/5">
+      <div class="text-center mb-16">
+        <span class="text-xs font-bold uppercase tracking-widest text-orange-400 bg-orange-500/10 px-3 py-1 rounded-full border border-orange-500/20">
+          Got Questions?
+        </span>
+        <h2 class="font-heading font-black text-3xl sm:text-5xl text-white mt-4">
+          Frequently Asked Questions
+        </h2>
+      </div>
+
+      <div class="space-y-4">
+        <!-- FAQ 1 -->
+        <div class="faq-accordion-item glass-panel rounded-2xl border border-white/10 overflow-hidden">
+          <button type="button" class="faq-accordion-trigger w-full p-5 text-left font-bold text-base text-white flex items-center justify-between gap-4">
+            <span>How fast can you build and launch my website?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-orange-400 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-accordion-body hidden px-5 pb-5 text-sm text-slate-300 border-t border-white/5 pt-3 leading-relaxed">
+            Landing pages and basic websites are typically delivered within 48 to 72 hours. Standard business websites take 1 to 2 weeks, and complex e-commerce stores or full web apps take 2 to 4 weeks depending on the requested features and assets.
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-accordion-item glass-panel rounded-2xl border border-white/10 overflow-hidden">
+          <button type="button" class="faq-accordion-trigger w-full p-5 text-left font-bold text-base text-white flex items-center justify-between gap-4">
+            <span>Do I need to have my logo, text, and photos ready before starting?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-orange-400 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-accordion-body hidden px-5 pb-5 text-sm text-slate-300 border-t border-white/5 pt-3 leading-relaxed">
+            Not at all! While having your own assets is great, in Step 6 of our interactive builder you can indicate that you need a custom brand logo, professional copywriting, or curated high-resolution photography. I take care of everything end-to-end.
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-accordion-item glass-panel rounded-2xl border border-white/10 overflow-hidden">
+          <button type="button" class="faq-accordion-trigger w-full p-5 text-left font-bold text-base text-white flex items-center justify-between gap-4">
+            <span>How does payment work? Is there a deposit?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-orange-400 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-accordion-body hidden px-5 pb-5 text-sm text-slate-300 border-t border-white/5 pt-3 leading-relaxed">
+            Projects generally follow a secure 50/50 structure: a 50% deposit upon project agreement and design sign-off, and the remaining 50% once your website is fully tested, reviewed, approved by you, and ready to point to your live domain.
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-accordion-item glass-panel rounded-2xl border border-white/10 overflow-hidden">
+          <button type="button" class="faq-accordion-trigger w-full p-5 text-left font-bold text-base text-white flex items-center justify-between gap-4">
+            <span>Can I edit my website myself after it goes live?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-orange-400 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-accordion-body hidden px-5 pb-5 text-sm text-slate-300 border-t border-white/5 pt-3 leading-relaxed">
+            Yes! If you select the Blog / CMS or Admin Dashboard feature, you get an intuitive content editor where you can add new articles, update prices, change menu items, or edit text with zero coding required.
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="faq-accordion-item glass-panel rounded-2xl border border-white/10 overflow-hidden">
+          <button type="button" class="faq-accordion-trigger w-full p-5 text-left font-bold text-base text-white flex items-center justify-between gap-4">
+            <span>Are domain name and web hosting included?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-orange-400 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-accordion-body hidden px-5 pb-5 text-sm text-slate-300 border-t border-white/5 pt-3 leading-relaxed">
+            If you already have your domain and hosting, I can deploy directly to your existing server. If not, I will configure fast global cloud hosting (with free SSL certificate and 99.9% uptime) and guide you through connecting your custom domain (.com, .it, .eu, etc.).
+          </div>
+        </div>
+
+        <!-- FAQ 6 -->
+        <div class="faq-accordion-item glass-panel rounded-2xl border border-white/10 overflow-hidden">
+          <button type="button" class="faq-accordion-trigger w-full p-5 text-left font-bold text-base text-white flex items-center justify-between gap-4">
+            <span>What happens during our booked 1-on-1 consultation?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-orange-400 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-accordion-body hidden px-5 pb-5 text-sm text-slate-300 border-t border-white/5 pt-3 leading-relaxed">
+            Our 20-30 minute consultation is 100% free and informal. We review your answers from the website builder, examine design inspirations, confirm your exact budget and timeline, and answer any technical questions so you feel completely confident before we write a single line of code.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         MAIN FEATURE: 9-STEP WEBSITE BUILDER & BOOKING ENGINE
+         ======================================================================== -->
+    <section id="website-builder" class="py-24 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto relative">
+      
+      <!-- Builder Section Header -->
+      <div class="text-center mb-10">
+        <span class="text-xs font-bold uppercase tracking-widest text-orange-400 bg-orange-500/10 px-3 py-1 rounded-full border border-orange-500/20">
+          Interactive Configurator
+        </span>
+        <h2 class="font-heading font-black text-3xl sm:text-5xl text-white mt-4">
+          Build Your Custom Website & Book A Call
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-3 max-w-2xl mx-auto">
+          Follow the 9 steps below to select your archetype, features, color palette, and book your free consultation. Your progress is saved automatically.
+        </p>
+
+        <!-- Draft Resumed Notice (hidden by default) -->
+        <div id="resume-draft-banner" class="hidden mt-4 inline-flex items-center gap-3 px-4 py-2 rounded-xl bg-blue-500/10 border border-blue-500/30 text-xs text-blue-300">
+          <span>ℹ️ We restored your saved draft from your previous session.</span>
+          <button type="button" onclick="window.resetBuilderDraft()" class="font-bold underline hover:text-white">Reset Draft</button>
+        </div>
+      </div>
+
+      <!-- Main Configurator Card Container -->
+      <div id="builder-card-container" class="glass-panel rounded-3xl border border-white/10 p-6 sm:p-10 shadow-2xl relative">
+        
+        <!-- Sticky Header within Builder (Progress + Live Price) -->
+        <div class="pb-6 mb-8 border-b border-white/10">
+          
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+            <div>
+              <span id="builder-step-label" class="text-xs font-bold uppercase tracking-wider text-orange-400">Step 1 of 9</span>
+              <span id="draft-saved-indicator" class="opacity-0 text-[11px] text-emerald-400 ml-2 font-medium transition-opacity">● Auto-saved</span>
+            </div>
+
+            <!-- Live Dynamic Price Badge -->
+            <div class="flex items-center gap-2">
+              <span class="text-xs text-slate-400 font-medium">Estimated Investment:</span>
+              <span class="live-price-display px-3 py-1 rounded-xl bg-orange-500/20 text-orange-400 font-extrabold text-sm border border-orange-500/30 shadow-inner">
+                $15 – $35
+              </span>
+            </div>
+          </div>
+
+          <!-- Progress Bar -->
+          <div class="w-full h-2 rounded-full bg-slate-800 overflow-hidden">
+            <div id="builder-progress-fill" class="h-full bg-gradient-to-r from-orange-500 via-amber-500 to-emerald-500 transition-all duration-500" style="width: 11%;"></div>
+          </div>
+
+          <!-- Step Indicators Row (Desktop) -->
+          <div class="hidden md:flex items-center justify-between mt-5 px-1">
+            <div id="step-indicator-dot-1" class="w-7 h-7 rounded-full bg-orange-500 text-white flex items-center justify-center text-xs font-bold">1</div>
+            <div class="flex-1 h-0.5 bg-slate-800 mx-1"></div>
+            <div id="step-indicator-dot-2" class="w-7 h-7 rounded-full bg-slate-800 text-slate-400 flex items-center justify-center text-xs font-medium">2</div>
+            <div class="flex-1 h-0.5 bg-slate-800 mx-1"></div>
+            <div id="step-indicator-dot-3" class="w-7 h-7 rounded-full bg-slate-800 text-slate-400 flex items-center justify-center text-xs font-medium">3</div>
+            <div class="flex-1 h-0.5 bg-slate-800 mx-1"></div>
+            <div id="step-indicator-dot-4" class="w-7 h-7 rounded-full bg-slate-800 text-slate-400 flex items-center justify-center text-xs font-medium">4</div>
+            <div class="flex-1 h-0.5 bg-slate-800 mx-1"></div>
+            <div id="step-indicator-dot-5" class="w-7 h-7 rounded-full bg-slate-800 text-slate-400 flex items-center justify-center text-xs font-medium">5</div>
+            <div class="flex-1 h-0.5 bg-slate-800 mx-1"></div>
+            <div id="step-indicator-dot-6" class="w-7 h-7 rounded-full bg-slate-800 text-slate-400 flex items-center justify-center text-xs font-medium">6</div>
+            <div class="flex-1 h-0.5 bg-slate-800 mx-1"></div>
+            <div id="step-indicator-dot-7" class="w-7 h-7 rounded-full bg-slate-800 text-slate-400 flex items-center justify-center text-xs font-medium">7</div>
+            <div class="flex-1 h-0.5 bg-slate-800 mx-1"></div>
+            <div id="step-indicator-dot-8" class="w-7 h-7 rounded-full bg-slate-800 text-slate-400 flex items-center justify-center text-xs font-medium">8</div>
+            <div class="flex-1 h-0.5 bg-slate-800 mx-1"></div>
+            <div id="step-indicator-dot-9" class="w-7 h-7 rounded-full bg-slate-800 text-slate-400 flex items-center justify-center text-xs font-medium">9</div>
+          </div>
+        </div>
+
+        <!-- ==================== STEP 1: WEBSITE TYPE ==================== -->
+        <div id="builder-step-1" class="builder-step-container">
+          <div class="mb-6">
+            <h3 class="font-heading font-black text-2xl text-white">Select Your Website Type</h3>
+            <p class="text-sm text-slate-400 mt-1">What kind of digital platform are you looking to create?</p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            
+            <div data-type="Business Website" class="website-type-card cursor-pointer p-5 rounded-2xl border transition-all flex flex-col justify-between">
+              <div>
+                <i data-lucide="briefcase" class="w-7 h-7 text-blue-400 mb-3"></i>
+                <h4 class="font-bold text-white text-base">Business Website</h4>
+                <p class="text-xs text-slate-400 mt-1">Multi-page corporate site to build authority and capture qualified leads.</p>
+              </div>
+              <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-xs">
+                <span class="text-slate-400">Starting from</span>
+                <span class="font-bold text-orange-400">$20</span>
+              </div>
+            </div>
+
+            <div data-type="Portfolio Website" class="website-type-card cursor-pointer p-5 rounded-2xl border transition-all flex flex-col justify-between">
+              <div>
+                <i data-lucide="camera" class="w-7 h-7 text-purple-400 mb-3"></i>
+                <h4 class="font-bold text-white text-base">Portfolio</h4>
+                <p class="text-xs text-slate-400 mt-1">Visual showcase for photographers, designers, models, and creators.</p>
+              </div>
+              <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-xs">
+                <span class="text-slate-400">Starting from</span>
+                <span class="font-bold text-orange-400">$10</span>
+              </div>
+            </div>
+
+            <div data-type="E-commerce Store" class="website-type-card cursor-pointer p-5 rounded-2xl border transition-all flex flex-col justify-between">
+              <div>
+                <i data-lucide="shopping-bag" class="w-7 h-7 text-orange-400 mb-3"></i>
+                <h4 class="font-bold text-white text-base">E-commerce Store</h4>
+                <p class="text-xs text-slate-400 mt-1">Online store with catalog, cart, and Stripe / Apple Pay checkout.</p>
+              </div>
+              <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-xs">
+                <span class="text-slate-400">Starting from</span>
+                <span class="font-bold text-orange-400">$40</span>
+              </div>
+            </div>
+
+            <div data-type="Landing Page" class="website-type-card cursor-pointer p-5 rounded-2xl border transition-all flex flex-col justify-between">
+              <div>
+                <i data-lucide="zap" class="w-7 h-7 text-emerald-400 mb-3"></i>
+                <h4 class="font-bold text-white text-base">Landing Page</h4>
+                <p class="text-xs text-slate-400 mt-1">High-converting 1-page site for product launches or paid ad funnels.</p>
+              </div>
+              <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-xs">
+                <span class="text-slate-400">Starting from</span>
+                <span class="font-bold text-orange-400">$5</span>
+              </div>
+            </div>
+
+            <div data-type="Blog / Publication" class="website-type-card cursor-pointer p-5 rounded-2xl border transition-all flex flex-col justify-between">
+              <div>
+                <i data-lucide="book-open" class="w-7 h-7 text-amber-400 mb-3"></i>
+                <h4 class="font-bold text-white text-base">Blog / Publication</h4>
+                <p class="text-xs text-slate-400 mt-1">Content hub with articles, categories, search, and newsletter hooks.</p>
+              </div>
+              <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-xs">
+                <span class="text-slate-400">Starting from</span>
+                <span class="font-bold text-orange-400">$15</span>
+              </div>
+            </div>
+
+            <div data-type="Booking Website" class="website-type-card cursor-pointer p-5 rounded-2xl border transition-all flex flex-col justify-between">
+              <div>
+                <i data-lucide="calendar" class="w-7 h-7 text-cyan-400 mb-3"></i>
+                <h4 class="font-bold text-white text-base">Booking Website</h4>
+                <p class="text-xs text-slate-400 mt-1">Automated appointment scheduling for salons, clinics, and consultants.</p>
+              </div>
+              <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-xs">
+                <span class="text-slate-400">Starting from</span>
+                <span class="font-bold text-orange-400">$30</span>
+              </div>
+            </div>
+
+            <div data-type="Restaurant / Cafe" class="website-type-card cursor-pointer p-5 rounded-2xl border transition-all flex flex-col justify-between">
+              <div>
+                <i data-lucide="utensils" class="w-7 h-7 text-rose-400 mb-3"></i>
+                <h4 class="font-bold text-white text-base">Restaurant / Cafe</h4>
+                <p class="text-xs text-slate-400 mt-1">Digital QR food menu, table reservation system, and location map.</p>
+              </div>
+              <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-xs">
+                <span class="text-slate-400">Starting from</span>
+                <span class="font-bold text-orange-400">$25</span>
+              </div>
+            </div>
+
+            <div data-type="Custom Web App" class="website-type-card cursor-pointer p-5 rounded-2xl border transition-all flex flex-col justify-between">
+              <div>
+                <i data-lucide="cpu" class="w-7 h-7 text-indigo-400 mb-3"></i>
+                <h4 class="font-bold text-white text-base">Custom Web App</h4>
+                <p class="text-xs text-slate-400 mt-1">Member portal, SaaS product, custom databases, and API integrations.</p>
+              </div>
+              <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-xs">
+                <span class="text-slate-400">Starting from</span>
+                <span class="font-bold text-orange-400">$55</span>
+              </div>
+            </div>
+
+            <div data-type="Other" class="website-type-card cursor-pointer p-5 rounded-2xl border transition-all flex flex-col justify-between">
+              <div>
+                <i data-lucide="sparkles" class="w-7 h-7 text-pink-400 mb-3"></i>
+                <h4 class="font-bold text-white text-base">Other / Tailored</h4>
+                <p class="text-xs text-slate-400 mt-1">Have a unique concept? We can tailor a custom solution for your needs.</p>
+              </div>
+              <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-xs">
+                <span class="text-slate-400">Custom estimate</span>
+                <span class="font-bold text-orange-400">Flexible</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="mt-8 flex justify-end">
+            <button type="button" class="btn-builder-next px-7 py-3 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-bold text-sm transition-all shadow-lg shadow-orange-500/25 flex items-center gap-2">
+              <span>Next: Purpose & Audience</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- ==================== STEP 2: PURPOSE & AUDIENCE ==================== -->
+        <div id="builder-step-2" class="builder-step-container hidden">
+          <div class="mb-6">
+            <h3 class="font-heading font-black text-2xl text-white">Project Purpose & Target Audience</h3>
+            <p class="text-sm text-slate-400 mt-1">Tell me about your business and who your website is for.</p>
+          </div>
+
+          <div class="space-y-5">
+            <div>
+              <label for="input-business-name" class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
+                Business or Brand Name <span class="text-orange-400">*</span>
+              </label>
+              <input type="text" id="input-business-name" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-orange-500 text-sm" placeholder="e.g. Gelato & Co. Milano or Studio Zen Wellness">
+            </div>
+
+            <div>
+              <label for="input-website-purpose" class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
+                What is the main goal of the website?
+              </label>
+              <textarea id="input-website-purpose" rows="3" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-orange-500 text-sm" placeholder="e.g. Generate high-ticket consulting leads, showcase our architectural projects, sell handmade shoes online..."></textarea>
+            </div>
+
+            <div>
+              <label for="input-target-audience" class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
+                Who are your ideal customers / target audience?
+              </label>
+              <input type="text" id="input-target-audience" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-orange-500 text-sm" placeholder="e.g. Local clients in Italy, young professionals aged 25-45, B2B SaaS companies...">
+            </div>
+
+            <div>
+              <label for="input-existing-website" class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
+                Current Website URL <span class="text-slate-500 font-normal lowercase">(optional - if redesigning)</span>
+              </label>
+              <input type="url" id="input-existing-website" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-orange-500 text-sm" placeholder="https://mycurrentwebsite.com">
+            </div>
+          </div>
+
+          <div class="mt-8 flex items-center justify-between">
+            <button type="button" class="btn-builder-prev px-5 py-2.5 rounded-xl border border-white/10 text-slate-300 hover:text-white text-sm font-semibold flex items-center gap-1.5">
+              <i data-lucide="arrow-left" class="w-4 h-4"></i> Back
+            </button>
+            <button type="button" class="btn-builder-next px-7 py-3 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-bold text-sm transition-all shadow-lg shadow-orange-500/25 flex items-center gap-2">
+              <span>Next: Design Preferences</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- ==================== STEP 3: DESIGN PREFERENCES ==================== -->
+        <div id="builder-step-3" class="builder-step-container hidden">
+          <div class="mb-6">
+            <h3 class="font-heading font-black text-2xl text-white">Design & Aesthetics</h3>
+            <p class="text-sm text-slate-400 mt-1">Choose the mood, color palette, and visual direction for your website.</p>
+          </div>
+
+          <!-- Style Selection -->
+          <div class="mb-8">
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-3">1. Aesthetic Style</label>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              <div data-style="Minimalist Clean" class="design-style-card cursor-pointer p-4 rounded-xl border text-center transition-all">
+                <span class="block font-bold text-sm text-white">Minimalist Clean</span>
+                <span class="text-xs text-slate-400">Lots of whitespace, crisp lines</span>
+              </div>
+              <div data-style="Bold & Vibrant" class="design-style-card cursor-pointer p-4 rounded-xl border text-center transition-all">
+                <span class="block font-bold text-white">Bold & Vibrant</span>
+                <span class="text-xs text-slate-400">High contrast, bright gradients</span>
+              </div>
+              <div data-style="Luxury Elegant" class="design-style-card cursor-pointer p-4 rounded-xl border text-center transition-all">
+                <span class="block font-bold text-white">Luxury Elegant</span>
+                <span class="text-xs text-slate-400">Deep tones, serif fonts, gold hints</span>
+              </div>
+              <div data-style="Playful Creative" class="design-style-card cursor-pointer p-4 rounded-xl border text-center transition-all">
+                <span class="block font-bold text-white">Playful Creative</span>
+                <span class="text-xs text-slate-400">Friendly rounded shapes, fun vibe</span>
+              </div>
+              <div data-style="Corporate Trust" class="design-style-card cursor-pointer p-4 rounded-xl border text-center transition-all">
+                <span class="block font-bold text-white">Corporate Trust</span>
+                <span class="text-xs text-slate-400">Structured, navy & slate tones</span>
+              </div>
+              <div data-style="Dark / Techy Neo" class="design-style-card cursor-pointer p-4 rounded-xl border text-center transition-all">
+                <span class="block font-bold text-white">Dark / Techy Neo</span>
+                <span class="text-xs text-slate-400">Glassmorphism, neon accents</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Color Palette Picker -->
+          <div class="mb-8 p-5 rounded-2xl bg-white/5 border border-white/10">
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-3">2. Brand Colors</label>
+            
+            <!-- Quick Preset Combos -->
+            <div class="mb-4">
+              <span class="text-xs text-slate-400 block mb-2">Preset Combinations:</span>
+              <div class="flex items-center gap-2 flex-wrap">
+                <button type="button" data-primary="#0B132B" data-secondary="#F97316" class="preset-palette-btn px-3 py-1.5 rounded-lg border border-white/10 text-xs font-semibold flex items-center gap-2 hover:border-orange-500">
+                  <span class="w-3 h-3 rounded-full bg-[#0B132B]"></span><span class="w-3 h-3 rounded-full bg-[#F97316]"></span> Deep Navy & Orange
+                </button>
+                <button type="button" data-primary="#1E1B4B" data-secondary="#38BDF8" class="preset-palette-btn px-3 py-1.5 rounded-lg border border-white/10 text-xs font-semibold flex items-center gap-2 hover:border-orange-500">
+                  <span class="w-3 h-3 rounded-full bg-[#1E1B4B]"></span><span class="w-3 h-3 rounded-full bg-[#38BDF8]"></span> Midnight & Cyan
+                </button>
+                <button type="button" data-primary="#064E3B" data-secondary="#10B981" class="preset-palette-btn px-3 py-1.5 rounded-lg border border-white/10 text-xs font-semibold flex items-center gap-2 hover:border-orange-500">
+                  <span class="w-3 h-3 rounded-full bg-[#064E3B]"></span><span class="w-3 h-3 rounded-full bg-[#10B981]"></span> Emerald & Mint
+                </button>
+                <button type="button" data-primary="#18181B" data-secondary="#EAB308" class="preset-palette-btn px-3 py-1.5 rounded-lg border border-white/10 text-xs font-semibold flex items-center gap-2 hover:border-orange-500">
+                  <span class="w-3 h-3 rounded-full bg-[#18181B]"></span><span class="w-3 h-3 rounded-full bg-[#EAB308]"></span> Onyx & Gold
+                </button>
+              </div>
+            </div>
+
+            <!-- Custom Color Inputs & Preview -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 items-center">
+              <div>
+                <span class="text-xs text-slate-400 block mb-1">Primary Color:</span>
+                <div class="flex items-center gap-2">
+                  <input type="color" id="input-primary-color" value="#0A2540" class="w-10 h-10 rounded-lg cursor-pointer bg-transparent border-0">
+                  <span id="label-primary-color" class="font-mono text-xs font-bold text-slate-200">#0A2540</span>
+                </div>
+              </div>
+
+              <div>
+                <span class="text-xs text-slate-400 block mb-1">Secondary / Accent:</span>
+                <div class="flex items-center gap-2">
+                  <input type="color" id="input-secondary-color" value="#F97316" class="w-10 h-10 rounded-lg cursor-pointer bg-transparent border-0">
+                  <span id="label-secondary-color" class="font-mono text-xs font-bold text-slate-200">#F97316</span>
+                </div>
+              </div>
+
+              <div>
+                <span class="text-xs text-slate-400 block mb-1">Gradient Preview:</span>
+                <div id="palette-preview-box" class="h-10 rounded-xl shadow-md border border-white/10 flex items-center justify-center text-xs font-bold text-white" style="background: linear-gradient(135deg, #0A2540 0%, #F97316 100%);">
+                  Custom Blend
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Typography Style -->
+          <div class="mb-8">
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-3">3. Typography Direction</label>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              <div data-font="Modern Sans" class="font-style-card cursor-pointer p-4 rounded-xl border text-center transition-all">
+                <span class="block font-sans font-bold text-base text-white">Modern Sans</span>
+                <span class="text-[11px] text-slate-400">Clean, crisp, geometric</span>
+              </div>
+              <div data-font="Classic Serif" class="font-style-card cursor-pointer p-4 rounded-xl border text-center transition-all">
+                <span class="block font-serif font-bold text-base text-white">Classic Serif</span>
+                <span class="text-[11px] text-slate-400">Timeless, editorial, luxury</span>
+              </div>
+              <div data-font="Handwritten" class="font-style-card cursor-pointer p-4 rounded-xl border text-center transition-all">
+                <span class="block font-bold text-base text-white" style="font-family: var(--font-handwriting); font-size: 1.2rem;">Handwritten</span>
+                <span class="text-[11px] text-slate-400">Artisan, boutique, warm</span>
+              </div>
+              <div data-font="Futuristic Tech" class="font-style-card cursor-pointer p-4 rounded-xl border text-center transition-all">
+                <span class="block font-mono font-bold text-base text-white">Futuristic</span>
+                <span class="text-[11px] text-slate-400">Monospace, tech, sleek</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Inspiration Links -->
+          <div>
+            <label for="input-inspiration-links" class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
+              4. Websites You Love As Inspiration <span class="text-slate-500 font-normal lowercase">(optional)</span>
+            </label>
+            <textarea id="input-inspiration-links" rows="2" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-orange-500 text-sm" placeholder="Paste links to any websites or dribbble shots you like the design of..."></textarea>
+          </div>
+
+          <div class="mt-8 flex items-center justify-between">
+            <button type="button" class="btn-builder-prev px-5 py-2.5 rounded-xl border border-white/10 text-slate-300 hover:text-white text-sm font-semibold flex items-center gap-1.5">
+              <i data-lucide="arrow-left" class="w-4 h-4"></i> Back
+            </button>
+            <button type="button" class="btn-builder-next px-7 py-3 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-bold text-sm transition-all shadow-lg shadow-orange-500/25 flex items-center gap-2">
+              <span>Next: Features Needed</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- ==================== STEP 4: FEATURES NEEDED ==================== -->
+        <div id="builder-step-4" class="builder-step-container hidden">
+          <div class="mb-6">
+            <h3 class="font-heading font-black text-2xl text-white">Features & Capabilities</h3>
+            <p class="text-sm text-slate-400 mt-1">Select all features you want included in your website. Prices update in real time.</p>
+          </div>
+
+          <!-- Feature Cards Grid (Generated by js/builder.js) -->
+          <div id="features-selection-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
+            <!-- Dynamic items injected here -->
+          </div>
+
+          <div class="mt-8 flex items-center justify-between">
+            <button type="button" class="btn-builder-prev px-5 py-2.5 rounded-xl border border-white/10 text-slate-300 hover:text-white text-sm font-semibold flex items-center gap-1.5">
+              <i data-lucide="arrow-left" class="w-4 h-4"></i> Back
+            </button>
+            <button type="button" class="btn-builder-next px-7 py-3 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-bold text-sm transition-all shadow-lg shadow-orange-500/25 flex items-center gap-2">
+              <span>Next: Pages Needed</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- ==================== STEP 5: PAGES NEEDED ==================== -->
+        <div id="builder-step-5" class="builder-step-container hidden">
+          <div class="mb-6">
+            <h3 class="font-heading font-black text-2xl text-white">Which Pages Do You Need?</h3>
+            <p class="text-sm text-slate-400 mt-1">Pick standard pages or add your own custom pages (e.g. Menu, Case Studies, Terms).</p>
+          </div>
+
+          <!-- Standard Pages Grid -->
+          <div class="mb-6">
+            <div class="flex items-center justify-between mb-3">
+              <label class="text-xs font-bold uppercase tracking-wider text-slate-300">Standard Page Options</label>
+              <span id="total-pages-count" class="text-xs font-bold text-orange-400">4 Pages Selected</span>
+            </div>
+            <div id="standard-pages-grid" class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              <!-- Rendered by js/builder.js -->
+            </div>
+          </div>
+
+          <!-- Custom Page Adder -->
+          <div class="p-5 rounded-2xl bg-white/5 border border-white/10 mb-6">
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Add Custom Page</label>
+            <div class="flex gap-2">
+              <input type="text" id="input-custom-page-name" class="flex-1 px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-orange-500 text-sm" placeholder="e.g. Wine List, Client Portal, Team Bios...">
+              <button type="button" id="btn-add-custom-page" class="px-5 py-2.5 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-bold text-xs">
+                + Add Page
+              </button>
+            </div>
+            
+            <div class="mt-4">
+              <span class="text-xs text-slate-400 block mb-2">Custom Pages:</span>
+              <div id="custom-pages-list" class="flex flex-wrap gap-2">
+                <!-- Injected custom pages -->
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 flex items-center justify-between">
+            <button type="button" class="btn-builder-prev px-5 py-2.5 rounded-xl border border-white/10 text-slate-300 hover:text-white text-sm font-semibold flex items-center gap-1.5">
+              <i data-lucide="arrow-left" class="w-4 h-4"></i> Back
+            </button>
+            <button type="button" class="btn-builder-next px-7 py-3 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-bold text-sm transition-all shadow-lg shadow-orange-500/25 flex items-center gap-2">
+              <span>Next: Content & Extras</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- ==================== STEP 6: CONTENT & EXTRAS ==================== -->
+        <div id="builder-step-6" class="builder-step-container hidden">
+          <div class="mb-6">
+            <h3 class="font-heading font-black text-2xl text-white">Content & Branding Support</h3>
+            <p class="text-sm text-slate-400 mt-1">Do you have assets ready, or would you like me to create them for you?</p>
+          </div>
+
+          <div class="space-y-6">
+            
+            <!-- Logo -->
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">1. Brand Logo</label>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <label class="content-option-card cursor-pointer p-4 rounded-xl border border-white/10 flex items-center gap-3">
+                  <input type="radio" name="content-logo" value="I already have a logo" checked class="text-orange-500 focus:ring-0">
+                  <div>
+                    <span class="block font-bold text-sm text-white">I already have a logo</span>
+                    <span class="text-xs text-slate-400">I will provide PNG/SVG files ($0)</span>
+                  </div>
+                </label>
+                <label class="content-option-card cursor-pointer p-4 rounded-xl border border-white/10 flex items-center gap-3">
+                  <input type="radio" name="content-logo" value="Need custom logo designed" class="text-orange-500 focus:ring-0">
+                  <div>
+                    <span class="block font-bold text-white text-sm">Need a custom logo designed</span>
+                    <span class="text-xs text-orange-400 font-semibold">+$5 (Includes vector & icon set)</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Copywriting -->
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">2. Website Text & Copywriting</label>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <label class="content-option-card cursor-pointer p-4 rounded-xl border border-white/10 flex items-center gap-3">
+                  <input type="radio" name="content-copywriting" value="I will provide my own text" checked class="text-orange-500 focus:ring-0">
+                  <div>
+                    <span class="block font-bold text-sm text-white">I will provide my own text</span>
+                    <span class="text-xs text-slate-400">Headlines, about text & descriptions ($0)</span>
+                  </div>
+                </label>
+                <label class="content-option-card cursor-pointer p-4 rounded-xl border border-white/10 flex items-center gap-3">
+                  <input type="radio" name="content-copywriting" value="Need copywriting assistance" class="text-orange-500 focus:ring-0">
+                  <div>
+                    <span class="block font-bold text-white text-sm">Need professional copywriting</span>
+                    <span class="text-xs text-orange-400 font-semibold">+$6 (Persuasive sales messaging)</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Photography & Images -->
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">3. Photography & Media</label>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <label class="content-option-card cursor-pointer p-4 rounded-xl border border-white/10 flex items-center gap-3">
+                  <input type="radio" name="content-images" value="I will provide photos" checked class="text-orange-500 focus:ring-0">
+                  <div>
+                    <span class="block font-bold text-sm text-white">I have my own photos</span>
+                    <span class="text-xs text-slate-400">High-res photography ready ($0)</span>
+                  </div>
+                </label>
+                <label class="content-option-card cursor-pointer p-4 rounded-xl border border-white/10 flex items-center gap-3">
+                  <input type="radio" name="content-images" value="Please source stock images" class="text-orange-500 focus:ring-0">
+                  <div>
+                    <span class="block font-bold text-white text-sm">Please source licensed images</span>
+                    <span class="text-xs text-orange-400 font-semibold">+$3 (Commercial license curated)</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Domain & Hosting -->
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">4. Domain & Hosting Assistance</label>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <label class="content-option-card cursor-pointer p-4 rounded-xl border border-white/10 flex items-center gap-3">
+                  <input type="radio" name="content-hosting" value="I have my own domain & hosting" checked class="text-orange-500 focus:ring-0">
+                  <div>
+                    <span class="block font-bold text-sm text-white">I have domain & hosting</span>
+                    <span class="text-xs text-slate-400">Deploy to my current provider ($0)</span>
+                  </div>
+                </label>
+                <label class="content-option-card cursor-pointer p-4 rounded-xl border border-white/10 flex items-center gap-3">
+                  <input type="radio" name="content-hosting" value="Need help setting up hosting & domain" class="text-orange-500 focus:ring-0">
+                  <div>
+                    <span class="block font-bold text-white text-sm">Help me setup domain & hosting</span>
+                    <span class="text-xs text-orange-400 font-semibold">+$4 (DNS, SSL, Cloudflare CDN)</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="mt-8 flex items-center justify-between">
+            <button type="button" class="btn-builder-prev px-5 py-2.5 rounded-xl border border-white/10 text-slate-300 hover:text-white text-sm font-semibold flex items-center gap-1.5">
+              <i data-lucide="arrow-left" class="w-4 h-4"></i> Back
+            </button>
+            <button type="button" class="btn-builder-next px-7 py-3 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-bold text-sm transition-all shadow-lg shadow-orange-500/25 flex items-center gap-2">
+              <span>Next: Budget & Timeline</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- ==================== STEP 7: BUDGET & TIMELINE ==================== -->
+        <div id="builder-step-7" class="builder-step-container hidden">
+          <div class="mb-6">
+            <h3 class="font-heading font-black text-2xl text-white">Budget Range & Target Timeline</h3>
+            <p class="text-sm text-slate-400 mt-1">Align your investment preferences and delivery expectations.</p>
+          </div>
+
+          <div class="space-y-6">
+            <div>
+              <label for="select-budget-range" class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
+                Expected Budget Range
+              </label>
+              <select id="select-budget-range" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-orange-500 text-sm">
+                <option value="$5 – $15" class="bg-slate-900">$5 – $15 (Starter / 1-Page / Portfolio)</option>
+                <option value="$15 – $35" selected class="bg-slate-900">$15 – $35 (Growth Business Website)</option>
+                <option value="$35 – $55" class="bg-slate-900">$35 – $55 (Custom E-commerce Store)</option>
+                <option value="$55 – $70" class="bg-slate-900">$55 – $70 (Full Custom Solution - Max $70)</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-3">
+                How quickly do you need this launched?
+              </label>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div data-timeline="ASAP / Rush" class="timeline-option-card cursor-pointer p-4 rounded-xl border border-white/10 transition-all flex items-center justify-between">
+                  <div>
+                    <span class="block font-bold text-sm text-white">⚡ ASAP / Urgent</span>
+                    <span class="text-xs text-slate-400">Under 1 week turnaround</span>
+                  </div>
+                  <span class="text-xs font-bold text-orange-400 px-2 py-0.5 rounded bg-orange-500/10">+15% Rush</span>
+                </div>
+
+                <div data-timeline="1 – 2 Weeks" class="timeline-option-card cursor-pointer p-4 rounded-xl border border-white/10 transition-all flex items-center justify-between">
+                  <div>
+                    <span class="block font-bold text-sm text-white">🚀 Fast Track</span>
+                    <span class="text-xs text-slate-400">1 – 2 weeks (Standard pace)</span>
+                  </div>
+                  <span class="text-xs font-bold text-emerald-400 px-2 py-0.5 rounded bg-emerald-500/10">Recommended</span>
+                </div>
+
+                <div data-timeline="1 Month" class="timeline-option-card cursor-pointer p-4 rounded-xl border border-white/10 transition-all flex items-center justify-between">
+                  <div>
+                    <span class="block font-bold text-sm text-white">📅 1 Month</span>
+                    <span class="text-xs text-slate-400">Plenty of time for feedback</span>
+                  </div>
+                  <span class="text-xs text-slate-400">Standard</span>
+                </div>
+
+                <div data-timeline="Flexible" class="timeline-option-card cursor-pointer p-4 rounded-xl border border-white/10 transition-all flex items-center justify-between">
+                  <div>
+                    <span class="block font-bold text-sm text-white">🌴 Flexible</span>
+                    <span class="text-xs text-slate-400">No strict deadline</span>
+                  </div>
+                  <span class="text-xs text-slate-400">Open</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 flex items-center justify-between">
+            <button type="button" class="btn-builder-prev px-5 py-2.5 rounded-xl border border-white/10 text-slate-300 hover:text-white text-sm font-semibold flex items-center gap-1.5">
+              <i data-lucide="arrow-left" class="w-4 h-4"></i> Back
+            </button>
+            <button type="button" class="btn-builder-next px-7 py-3 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-bold text-sm transition-all shadow-lg shadow-orange-500/25 flex items-center gap-2">
+              <span>Next: Book Consultation</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- ==================== STEP 8: BOOK A CONSULTATION ==================== -->
+        <div id="builder-step-8" class="builder-step-container hidden">
+          <div class="mb-6">
+            <h3 class="font-heading font-black text-2xl text-white">Schedule Your Free 1-on-1 Strategy Call</h3>
+            <p class="text-sm text-slate-400 mt-1">Pick an available date and time slot. Already-booked slots are blocked automatically.</p>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            
+            <!-- Calendar & Slots Column -->
+            <div class="p-5 rounded-2xl bg-white/5 border border-white/10">
+              
+              <!-- Month Header -->
+              <div class="flex items-center justify-between mb-4">
+                <h4 id="calendar-month-year" class="font-bold text-base text-white">October 2026</h4>
+                <div class="flex items-center gap-1">
+                  <button type="button" id="cal-prev-month" class="p-2 rounded-lg hover:bg-white/10 text-slate-300" title="Previous Month">
+                    <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                  </button>
+                  <button type="button" id="cal-next-month" class="p-2 rounded-lg hover:bg-white/10 text-slate-300" title="Next Month">
+                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Day of week header (Mon - Sun) -->
+              <div class="grid grid-cols-7 gap-1 text-center text-xs font-bold text-slate-400 mb-2">
+                <span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span><span>Su</span>
+              </div>
+
+              <!-- Days Grid (Rendered by js/builder.js) -->
+              <div id="calendar-days-grid" class="grid grid-cols-7 gap-1.5">
+                <!-- Days injected -->
+              </div>
+
+              <!-- Time Slot Chips -->
+              <div class="mt-6 pt-5 border-t border-white/10">
+                <span id="selected-date-preview-label" class="text-xs font-bold uppercase tracking-wider text-slate-300 block mb-3">
+                  Available Time Slots:
+                </span>
+                <div id="time-slots-container" class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                  <!-- Injected slots -->
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Client Contact Details Column -->
+            <div class="space-y-4">
+              <div>
+                <label for="input-client-name" class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">
+                  Your Full Name <span class="text-orange-400">*</span>
+                </label>
+                <input type="text" id="input-client-name" class="w-full px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-orange-500 text-sm" placeholder="e.g. Marco Rossi">
+              </div>
+
+              <div>
+                <label for="input-client-email" class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">
+                  Email Address <span class="text-orange-400">*</span>
+                </label>
+                <input type="email" id="input-client-email" class="w-full px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-orange-500 text-sm" placeholder="marco.rossi@example.com">
+              </div>
+
+              <div>
+                <label for="input-client-phone" class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">
+                  Phone / WhatsApp Number <span class="text-orange-400">*</span>
+                </label>
+                <input type="tel" id="input-client-phone" class="w-full px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-orange-500 text-sm" placeholder="+39 340 123 4567">
+              </div>
+
+              <div>
+                <label for="select-contact-method" class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">
+                  Preferred Platform for Strategy Call
+                </label>
+                <select id="select-contact-method" class="w-full px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-orange-500 text-sm">
+                  <option value="WhatsApp Call" selected class="bg-slate-900">WhatsApp Call / Audio</option>
+                  <option value="Google Meet" class="bg-slate-900">Google Meet Video Call</option>
+                  <option value="Zoom" class="bg-slate-900">Zoom Video Call</option>
+                  <option value="Direct Phone Call" class="bg-slate-900">Direct Phone Call</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="input-client-notes" class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">
+                  Any specific questions or project notes? <span class="text-slate-500 font-normal lowercase">(optional)</span>
+                </label>
+                <textarea id="input-client-notes" rows="2" class="w-full px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-orange-500 text-sm" placeholder="Tell me anything else you'd like to cover during our call..."></textarea>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="mt-8 flex items-center justify-between">
+            <button type="button" class="btn-builder-prev px-5 py-2.5 rounded-xl border border-white/10 text-slate-300 hover:text-white text-sm font-semibold flex items-center gap-1.5">
+              <i data-lucide="arrow-left" class="w-4 h-4"></i> Back
+            </button>
+            <button type="button" class="btn-builder-next px-7 py-3 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-bold text-sm transition-all shadow-lg shadow-orange-500/25 flex items-center gap-2">
+              <span>Next: Review & Summary</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- ==================== STEP 9: SUMMARY & CONFIRMATION ==================== -->
+        <div id="builder-step-9" class="builder-step-container hidden">
+          <div class="mb-6">
+            <h3 class="font-heading font-black text-2xl text-white">Review Your Project Scope & Booking</h3>
+            <p class="text-sm text-slate-400 mt-1">Check all details below. Click "Edit" on any section to modify it before confirming.</p>
+          </div>
+
+          <!-- Summary Recap Container (Rendered by js/builder.js) -->
+          <div id="summary-recap-content" class="space-y-4">
+            <!-- Dynamic summary sections -->
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <button type="button" class="btn-builder-prev px-5 py-2.5 rounded-xl border border-white/10 text-slate-300 hover:text-white text-sm font-semibold flex items-center gap-1.5">
+              <i data-lucide="arrow-left" class="w-4 h-4"></i> Back
+            </button>
+
+            <button type="button" id="btn-confirm-booking" class="w-full sm:w-auto px-9 py-4 rounded-2xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-extrabold text-base shadow-2xl shadow-orange-500/30 hover:shadow-orange-500/50 transition-all flex items-center justify-center gap-2">
+              <span>Confirm Booking & Submit Request</span>
+              <i data-lucide="check" class="w-5 h-5"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ==================== POST-SUBMISSION SUCCESS SCREEN ==================== -->
+      <div id="builder-success-screen" class="glass-panel rounded-3xl border border-emerald-500/30 p-8 sm:p-12 shadow-2xl hidden text-center max-w-2xl mx-auto">
+        <div class="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-6 border border-emerald-500/40">
+          <i data-lucide="check" class="w-8 h-8"></i>
+        </div>
+
+        <span class="text-xs font-mono font-bold uppercase tracking-widest text-emerald-400">
+          Booking Confirmed • Reference: <span id="success-booking-id">SF-2026-0000</span>
+        </span>
+
+        <h3 class="font-heading font-black text-3xl sm:text-4xl text-white mt-3">
+          Thank you, <span id="success-client-name">there</span>!
+        </h3>
+
+        <p class="text-slate-300 text-sm sm:text-base mt-3">
+          Your project configuration has been saved and your consultation slot is reserved. A confirmation summary is on its way to your email.
+        </p>
+
+        <!-- Itinerary Box -->
+        <div class="my-6 p-5 rounded-2xl bg-white/5 border border-white/10 text-left text-sm space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="text-slate-400 text-xs">Date & Time:</span>
+            <strong id="success-date-time" class="text-orange-400">--</strong>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-slate-400 text-xs">Platform:</span>
+            <strong id="success-method" class="text-white">--</strong>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-slate-400 text-xs">Project Type:</span>
+            <strong id="success-project-type" class="text-white">--</strong>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-slate-400 text-xs">Estimated Price:</span>
+            <strong id="success-estimated-price" class="text-emerald-400">--</strong>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+          <a id="success-whatsapp-btn" href="#" target="_blank" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-lg flex items-center justify-center gap-2">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            <span>Chat on WhatsApp Now</span>
+          </a>
+
+          <button type="button" id="success-calendar-download-btn" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-sm border border-white/10 flex items-center justify-center gap-2">
+            <i data-lucide="calendar" class="w-4 h-4"></i>
+            <span>Add to Calendar (.ics)</span>
+          </button>
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-white/10 text-xs text-slate-400">
+          Need to make an immediate change? Reach S. Fernandez directly at <a href="mailto:seneshf60@gmail.com" class="text-orange-400 hover:underline">seneshf60@gmail.com</a>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="border-t border-white/10 bg-slate-950/80 pt-16 pb-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+      
+      <!-- Brand & Tagline -->
+      <div class="md:col-span-2">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-blue-600 to-orange-500 p-0.5">
+            <div class="w-full h-full bg-[#070B19] rounded-[14px] flex items-center justify-center font-heading font-black text-lg text-white">
+              <span class="text-orange-500">S</span><span class="text-blue-400">F</span>
+            </div>
+          </div>
+          <span class="font-heading font-black text-2xl text-white">S. Fernandez</span>
+        </div>
+        <p class="text-sm text-slate-400 max-w-md italic">
+          "Websites built exactly the way you imagine them."
+        </p>
+        <p class="text-xs text-slate-500 mt-3 max-w-md leading-relaxed">
+          Bespoke web design, modern front-end architecture, and high-conversion e-commerce solutions for brands worldwide. Based in Italy, serving international clients.
+        </p>
+      </div>
+
+      <!-- Quick Nav -->
+      <div>
+        <h4 class="font-bold text-sm uppercase tracking-wider text-white mb-4">Navigation</h4>
+        <ul class="space-y-2 text-sm text-slate-400">
+          <li><a href="#services" class="hover:text-orange-400 transition-colors">Services & Pricing</a></li>
+          <li><a href="#portfolio" class="hover:text-orange-400 transition-colors">Portfolio Showcase</a></li>
+          <li><a href="#how-it-works" class="hover:text-orange-400 transition-colors">4-Step Process</a></li>
+          <li><a href="#website-builder" class="hover:text-orange-400 transition-colors">Website Builder</a></li>
+          <li><a href="#faq" class="hover:text-orange-400 transition-colors">Frequently Asked Questions</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div>
+        <h4 class="font-bold text-sm uppercase tracking-wider text-white mb-4">Direct Contact</h4>
+        <ul class="space-y-2.5 text-sm text-slate-400">
+          <li class="flex items-center gap-2">
+            <i data-lucide="mail" class="w-4 h-4 text-orange-400"></i>
+            <a href="mailto:seneshf60@gmail.com" class="hover:text-white">seneshf60@gmail.com</a>
+          </li>
+          <li class="flex items-center gap-2">
+            <i data-lucide="phone" class="w-4 h-4 text-orange-400"></i>
+            <a href="tel:+393510823322" class="hover:text-white">+39 351 082 3322</a>
+          </li>
+          <li class="flex items-center gap-2">
+            <i data-lucide="message-square" class="w-4 h-4 text-emerald-400"></i>
+            <a href="https://wa.me/393510823322" target="_blank" class="hover:text-white">WhatsApp Direct Chat</a>
+          </li>
+          <li class="pt-2">
+            <a href="admin.html" class="inline-flex items-center gap-1.5 text-xs text-slate-500 hover:text-slate-300">
+              <i data-lucide="lock" class="w-3.5 h-3.5"></i> Admin Dashboard
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="max-w-7xl mx-auto mt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+      <p>© 2026 S. Fernandez. All rights reserved.</p>
+      <div class="flex items-center gap-6">
+        <a href="#website-builder" class="hover:text-slate-300">Start Project</a>
+        <a href="admin.html" class="hover:text-slate-300">Admin Login</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       FLOATING WHATSAPP CHAT BUTTON
+       ======================================================================== -->
+  <a id="floating-whatsapp-btn" href="https://wa.me/393510823322?text=Hi%20S.%20Fernandez!%20I'd%20like%20to%20discuss%20building%20a%20website." target="_blank" class="whatsapp-float w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center group" title="Chat with S. Fernandez on WhatsApp">
+    <i data-lucide="message-circle" class="w-7 h-7"></i>
+    <!-- Tooltip badge -->
+    <span class="absolute right-16 top-2.5 px-3 py-1.5 rounded-xl bg-slate-900 text-white text-xs font-semibold whitespace-nowrap shadow-xl border border-white/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+      Chat on WhatsApp (Online)
+    </span>
+  </a>
+
+  <!-- ========================================================================
+       PORTFOLIO QUICK VIEW MODAL
+       ======================================================================== -->
+  <div id="project-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
+    <div class="glass-panel rounded-3xl border border-white/20 p-6 sm:p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto relative bg-[#0B132B]">
+      <button type="button" id="project-modal-close" class="absolute top-4 right-4 p-2 rounded-full bg-white/10 hover:bg-white/20 text-slate-300 hover:text-white" title="Close">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+      <div id="project-modal-content">
+        <!-- Injected dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Message Host -->
+  <div id="toast-container"></div>
+
+  <!-- Script Modules -->
+  <script src="js/storage.js"></script>
+  <script src="js/builder.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
